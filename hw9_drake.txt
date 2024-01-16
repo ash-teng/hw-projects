@@ -1,0 +1,63 @@
+Script started on Tue 28 Jul 2020 09:34:28 AM MST
+[?1034hsh-4.2$ cat -n hw9.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	typedef struct {
+     5	    double x;
+     6	    double y;
+     7	} Point;
+     8	
+     9	typedef struct {
+    10	    Point p1;
+    11	    Point p2;
+    12	    Point p3;
+    13	} Triangle;
+    14	
+    15	double getRandomDouble(double lowerBound, double upperBound) {
+    16	    double rangeOfReals = upperBound - lowerBound;
+    17	    double normalizedRand = rand() / (RAND_MAX + 1.0);
+    18	    return normalizedRand * rangeOfReals + lowerBound;
+    19	}
+    20	
+    21	Point getRandompoint() {
+    22	    Point pt;
+    23	    pt.x = getRandomDouble(0,1); 
+    24	    pt.y = getRandomDouble(0,1); 
+    25	    return pt;
+    26	}
+    27	
+    28	Point getCentroid(Triangle t) {
+    29	    Point centroid;
+    30	    centroid.x = (t.p1.x + t.p2.x + t.p3.x) / 3;
+    31	    centroid.y = (t.p1.y + t.p2.y + t.p3.y) / 3;
+    32	    return centroid;
+    33	}
+    34	 
+    35	
+    36	
+    37	    
+    38	 
+    39	
+    40	
+    41	int main() {
+    42	    Triangle tr;
+    43	    Point centroid;
+    44	    tr.p1 = getRandompoint ();
+    45	    tr.p2 = getRandompoint ();
+    46	    tr.p3 = getRandompoint ();
+    47	    printf("The triangle vertices are [%.2lf,%.2lf], [%.2lf,%.2lf], and [%.2lf, %.2lf]\n"
+    48	    ,tr.p1.x, tr.p1.y, tr.p2.x, tr.p2.y, tr.p3.x, tr.p3.y);
+    49	    centroid = getCentroid(tr);
+    50	    printf("The centroid is [%.2lf, %.2lf]\n", centroid.x, centroid.y);
+    51	    return 0;
+    52	}
+    53	
+sh-4.2$ gcc -ansi -Wall hw9.c
+sh-4.2$ a.out
+The triangle vertices are [0.84,0.39], [0.78,0.80], and [0.91, 0.20]
+The centroid is [0.84, 0.46]
+sh-4.2$ exit
+exit
+
+Script done on Tue 28 Jul 2020 09:34:57 AM MST

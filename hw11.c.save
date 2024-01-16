@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdilb.h>
+
+int printXYZ(int x, int y, int z) {
+    int x = 0;
+    int y = 0;
+    int z = 0;
+
+int enterXYZ(ptr *X, ptr *Y, ptr *Z)
+    printf("Enter three value for xyz by comma: \n");
+    scanf("%d, %d, %d", &ptrX, &ptrY, &ptrZ);
+    
+    
+void swap(int *val1, int *val2)
+
+int main(int x, int y, int z) {

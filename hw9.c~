@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct {
+    double x;
+    double y;
+} Point;
+
+typedef struct {
+    Point p1;
+    Point p2;
+    Point p3;
+} Triangle;
+
+
+Point enterPoint() {
+    Point pt;
+    printf("Enter the x and y coordinates separated by a comma: \n");
+    scanf("%lf, %lf", &pt.x, &pt.y); 
+    return pt;
+}
+
+void enterVertices(Triangle *tr) {
+    tr->p1 = enterPoint ();
+    tr->p2 = enterPoint ();
+    tr->p3 = enterPoint ();
+}
+
+double distanceBetweenPoints(const Point *p1, const Point *p2) {
+    double xdiff = p1->x - p2->x;
+    double ydiff = p1->y - p2->y;
+    return  sqrt(xdiff  * xdiff + ydiff  * ydiff);
+}
+
+double getPerimeter(const Triangle* tr) {
+    double perimeter =  distanceBetweenPoints(&tr->p1, &tr->p2);
+    perimeter +=  distanceBetweenPoints(&tr->p2, &tr->p3);
+    perimeter += distanceBetweenPoints(&tr->p3, &tr->p1);
+       
+    return perimeter;
+}
+    
+
+
+
+
+int main() {
+    Triangle tr;
+    double perimeter;
+    enterVertices(&tr);
+    printf("The point coordinates are [%.2lf,%.2lf], [%.2lf,%.2lf], and [%.2lf, %.2lf]\n"
+    ,tr.p1.x, tr.p1.y, tr.p2.x, tr.p2.y, tr.p3.x, tr.p3.y);
+    perimeter = getPerimeter(&tr);
+    printf("The perimeter is %.2lf\n",  perimeter);
+    return 0;
+}
+

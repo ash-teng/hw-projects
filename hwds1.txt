@@ -1,0 +1,78 @@
+Script started on Fri 11 Sep 2020 12:49:29 AM MST
+[?1034hsh-4.2$ cat -n hwd1.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	typedef struct listItem
+     5	{
+     6	    int someInteger;
+     7	    struct listItem *next;
+     8	}LIST_ITEM;
+     9	
+    10	LIST_ITEM* getnewlink(int someInteger, LIST_ITEM *next);
+    11	LIST_ITEM* printLinkedList();
+    12	LIST_ITEM* deletepoints();
+    13	
+    14	
+    15	int main() {
+    16	int someInteger;
+    17	LIST_ITEM *next;
+    18	LIST_ITEM *delPtr;
+    19	LIST_ITEM* start = NULL;
+    20	next = getnewlink(someInteger, next);
+    21	printf("Ok, here's your list in numeric order %d:", start->someInteger);
+    22	deletepoints();
+    23	printf("What do you wan to delete?");
+    24	scanf("%d\n", delPtr);
+    25	
+    26	return 0;
+    27	}
+    28	
+    29	LIST_ITEM* getnewlink(int someInteger, LIST_ITEM *next) {
+    30	    LIST_ITEM *start = NULL, *temp;
+    31	    temp = malloc(sizeof(LIST_ITEM));
+    32	    printf("Enter your integer: ");
+    33	    scanf("%d", &(temp->someInteger));
+    34	    temp->next = start;
+    35	    start = temp;
+    36	    return temp;
+    37	}
+    38	
+    39	LIST_ITEM* printLinkedList(LIST_ITEM *start) {
+    40	LIST_ITEM *trvPtr = start;
+    41	while (trvPtr != NULL)
+    42	 {
+    43	    printf("%d", trvPtr->someInteger);
+    44	    trvPtr = trvPtr->next;
+    45	 }
+    46	return trvPtr;
+    47	}
+    48	
+    49	LIST_ITEM* deletepoints() {
+    50	int valueToBeDeleted;
+    51	LIST_ITEM* delPtr;
+    52	LIST_ITEM* start;
+    53	if (start == NULL)
+    54	    printf("Can't delete from an empty list");
+    55	else if (start->someInteger == valueToBeDeleted)
+    56	    start = start->next;
+    57	else
+    58	 {
+    59	    delPtr = start;
+    60	    while ((delPtr->next != NULL) &&
+    61	            (delPtr->next->someInteger != valueToBeDeleted))
+    62	        delPtr = delPtr->next;
+    63	    if ((delPtr->next = NULL))
+    64	      printf("Can't find %d in the list", valueToBeDeleted);
+    65	    else
+    66	      delPtr->next = (delPtr->next)->next;
+    67	 }
+    68	return delPtr;
+    69	}
+    70	
+    71	
+    72	
+sh-4.2$ exit
+exit
+
+Script done on Fri 11 Sep 2020 12:50:03 AM MST

@@ -1,0 +1,102 @@
+Script started on Thu 16 Jul 2020 11:57:34 AM MST
+[?1034hsh-4.2$ cat -n hw5.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	void printLetter(char c);
+     5	void printHex(char c);
+     6	void printDecimal(char c);
+     7	int printBinary(char c);
+     8	void printParity(int bits);
+     9	void analyzeChar(char c);
+    10	
+    11	
+    12	int main()
+    13	{
+    14	    char c;
+    15	    printf("Enter a line of text: ");
+    16	    do {
+    17	        scanf("%c", &c);
+    18	        analyzeChar(c);
+    19	    } while (c != '\n');
+    20	    return 0;
+    21	}
+    22	
+    23	void printLetter(char c)
+    24	{
+    25	    if (c == '\n')
+    26	        printf("The ASCII code for '\\n'");
+    27	    else
+    28	        printf("The ASCII code for '%c' ", c);
+    29	}
+    30	
+    31	void printHex(char c)
+    32	{
+    33	    printf("is %02x hex, ", c);
+    34	}
+    35	
+    36	void printDecimal(char c)
+    37	{
+    38	    printf("%3d decimal, ", c);
+    39	}
+    40	
+    41	int printBinary(char c)
+    42	{
+    43	    int i = 0;
+    44	    int bitMask = 0x80 ;
+    45	    int count = 0;
+    46	    while (i < 8) {
+    47	        if ((c & bitMask) != 0) {
+    48	            printf("1");
+    49	            count++;
+    50	        } else
+    51	            printf("0");
+    52	        i++;
+    53	        bitMask >>= 1; 
+    54	    }            
+    55	    printf(" binary, ");
+    56	    return count;
+    57	    
+    58	}
+    59	
+    60	void printParity(int bits)
+    61	{
+    62	    printf("%d bits are set, ", bits);
+    63	    if (bits % 2 == 0)
+    64	        printf("parity is even");
+    65	    else
+    66	        printf("parity is odd");
+    67	    
+    68	    
+    69	}
+    70	
+    71	void analyzeChar(char c)
+    72	{
+    73	    int bits = 0;
+    74	    printLetter(c);
+    75	    printHex(c);
+    76	    printDecimal(c);
+    77	    bits = printBinary(c);
+    78	    printParity(bits);
+    79	    printf("\n");
+    80	}
+sh-4.2$ gcc -ansi -Wall hw5.c
+sh-4.2$ a.out
+Enter a line of text: HE ello There!
+The ASCII code for 'H' is 48 hex,  72 decimal, 01001000 binary, 2 bits are set, parity is even
+The ASCII code for 'e' is 65 hex, 101 decimal, 01100101 binary, 4 bits are set, parity is even
+The ASCII code for 'l' is 6c hex, 108 decimal, 01101100 binary, 4 bits are set, parity is even
+The ASCII code for 'l' is 6c hex, 108 decimal, 01101100 binary, 4 bits are set, parity is even
+The ASCII code for 'o' is 6f hex, 111 decimal, 01101111 binary, 6 bits are set, parity is even
+The ASCII code for ' ' is 20 hex,  32 decimal, 00100000 binary, 1 bits are set, parity is odd
+The ASCII code for 'T' is 54 hex,  84 decimal, 01010100 binary, 3 bits are set, parity is odd
+The ASCII code for 'h' is 68 hex, 104 decimal, 01101000 binary, 3 bits are set, parity is odd
+The ASCII code for 'e' is 65 hex, 101 decimal, 01100101 binary, 4 bits are set, parity is even
+The ASCII code for 'r' is 72 hex, 114 decimal, 01110010 binary, 4 bits are set, parity is even
+The ASCII code for 'e' is 65 hex, 101 decimal, 01100101 binary, 4 bits are set, parity is even
+The ASCII code for '!' is 21 hex,  33 decimal, 00100001 binary, 2 bits are set, parity is even
+The ASCII code for '\n'is 0a hex,  10 decimal, 00001010 binary, 2 bits are set, parity is even
+sh-4.2$ exit
+exit
+
+Script done on Thu 16 Jul 2020 11:58:13 AM MST

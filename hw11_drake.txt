@@ -1,0 +1,65 @@
+Script started on Sun 09 Aug 2020 12:01:43 PM MST
+[?1034hsh-4.2$ cat -n hw11.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	void printXYZ(int x, int y, int z) {
+     5	    printf("x is equal to %d:  ", x);  
+     6	    printf("y is equal to %d:  ", y);   
+     7	    printf("z is equal to %d \n", z);    
+     8	}    
+     9	    
+    10	
+    11	void enterXYZ(int* ptrX, int* ptrY, int* ptrZ) {
+    12	    printf("Enter three value for xyz by comma: \n");
+    13	    if (scanf("%d, %d, %d", ptrX, ptrY, ptrZ) == 3) 
+    14	        printXYZ(*ptrX, *ptrY, *ptrZ);
+    15	    else {
+    16	        /* get rid of failing input */
+    17	        scanf("%*[^\n]");
+    18	        enterXYZ(ptrX, ptrY, ptrZ);
+    19	    }
+    20	}
+    21	
+    22	void swap(int *val1, int *val2) {
+    23	    int temp = *val1;
+    24	    *val1 = *val2;
+    25	    *val2 = temp;
+    26	}
+    27	    
+    28	
+    29	void xyzAscending(int* px, int* py, int* pz) {
+    30	    if (*px > *py)
+    31	        swap(px, py);
+    32	    if (*py > *pz)
+    33	        swap(py, pz);
+    34	    if (*px > *py)
+    35	        swap(px, py);
+    36	
+    37	}
+    38	
+    39	    
+    40	int main() {
+    41	    int x = 0;
+    42	    int y = 0;
+    43	    int z = 0;
+    44	    printXYZ(x, y, z);
+    45	    enterXYZ(&x, &y, &z);
+    46	    printXYZ(x, y, z);
+    47	    xyzAscending(&x, &y, &z);
+    48	    printXYZ(x, y, z);
+    49	    return 0;
+    50	}    
+    51	
+sh-4.2$ gcc -ansi -Wall hw11.c
+sh-4.2$ a.out
+x is equal to 0:  y is equal to 0:  z is equal to 0 
+Enter three value for xyz by comma: 
+5,7,6
+x is equal to 5:  y is equal to 7:  z is equal to 6 
+x is equal to 5:  y is equal to 7:  z is equal to 6 
+x is equal to 5:  y is equal to 6:  z is equal to 7 
+sh-4.2$ exit
+exit
+
+Script done on Sun 09 Aug 2020 12:02:12 PM MST

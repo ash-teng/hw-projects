@@ -1,0 +1,70 @@
+Script started on Tue 28 Jul 2020 04:04:27 PM MST
+[?1034hsh-4.2$ cat i[K[K -n hw9.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	#include <math.h>
+     4	
+     5	typedef struct {
+     6	    double x;
+     7	    double y;
+     8	} Point;
+     9	
+    10	typedef struct {
+    11	    Point p1;
+    12	    Point p2;
+    13	    Point p3;
+    14	} Triangle;
+    15	
+    16	
+    17	Point enterPoint() {
+    18	    Point pt;
+    19	    printf("Enter the x and y coordinates separated by a comma: \n");
+    20	    scanf("%lf, %lf", &pt.x, &pt.y); 
+    21	    return pt;
+    22	}
+    23	
+    24	void enterVertices(Triangle *tr) {
+    25	    tr->p1 = enterPoint ();
+    26	    tr->p2 = enterPoint ();
+    27	    tr->p3 = enterPoint ();
+    28	}
+    29	
+    30	double distanceBetweenPoints(const Point *p1, const Point *p2) {
+    31	    double xdiff = p1->x - p2->x;
+    32	    double ydiff = p1->y - p2->y;
+    33	    return  sqrt(xdiff  * xdiff + ydiff  * ydiff);
+    34	}
+    35	
+    36	double getPerimeter(const Triangle* tr) {
+    37	    double perimeter =  distanceBetweenPoints(&tr->p1, &tr->p2);
+    38	    perimeter +=  distanceBetweenPoints(&tr->p2, &tr->p3);
+    39	    perimeter += distanceBetweenPoints(&tr->p3, &tr->p1);
+    40	       
+    41	    return perimeter;
+    42	}
+    43	    
+    44	int main() {
+    45	    Triangle tr;
+    46	    double perimeter;
+    47	    enterVertices(&tr);
+    48	    printf("The point coordinates are [%.2lf,%.2lf], [%.2lf,%.2lf], and [%.2lf, %.2lf]\n"
+    49	    ,tr.p1.x, tr.p1.y, tr.p2.x, tr.p2.y, tr.p3.x, tr.p3.y);
+    50	    perimeter = getPerimeter(&tr);
+    51	    printf("The perimeter is %.2lf\n",  perimeter);
+    52	    return 0;
+    53	}
+    54	
+sh-4.2$ gcc -lm -ansi hw9.c
+sh-4.2$ a.out
+Enter the x and y coordinates separated by a comma: 
+5.0,  6.0
+Enter the x and y coordinates separated by a comma: 
+7.5,8.9
+Enter the x and y coordinates separated by a comma: 
+3.2,5.8
+The point coordinates are [5.00,6.00], [7.50,8.90], and [3.20, 5.80]
+The perimeter is 10.94
+sh-4.2$ exit
+exit
+
+Script done on Tue 28 Jul 2020 04:05:29 PM MST

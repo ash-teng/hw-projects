@@ -1,0 +1,176 @@
+Script started on Tue 04 Aug 2020 07:12:27 PM MST
+[?1034hsh-4.2$ cat -n hw6.c
+     1	/* TODO: put your file header here */
+     2	#include <stdio.h>
+     3	
+     4	/* Function: stringLength
+     5	 * Purpose:  count the number of characters in a string up to null
+     6	 * Argument: str       - the string array
+     7	 * Returns:  the length of the string
+     8	 * Precondition:  the source is a valid string with null termination
+     9	 * Postcondition: Nothing in str is changed
+    10	 */
+    11	int stringLength(char* str) {
+    12	    int count = 0;
+    13	    int i = 0;
+    14	    for (i = 0; str[i] != '\0'; ++i)
+    15	        count++; 
+    16	    return count;
+    17	}
+    18	
+    19	/* Function: stringCopy
+    20	 * Purpose:  Copy the string from source to destination (but unsafe)
+    21	 * Argument: source          - the string to be copied
+    22	 * Argument: destination     - the array into which to copy the string
+    23	 * Returns:  nothing
+    24	 * Precondition:  the source is a valid string with null termination
+    25	 * Postcondition: the destination has the same string as the source
+    26	 * Postcondition: the destination string is null terminated
+    27	 * Postcondition: Nothing in source is changed
+    28	 */
+    29	void stringCopy(char* source, char* destination) {
+    30	  int i = 0;
+    31	  for (i = 0; source[i] != '\0'; ++i)
+    32	    source[i] = destination[1];
+    33	}
+    34	
+    35	/* Function: safeStringLength
+    36	 * Purpose:  count the number of characters in a string, but only
+    37	 *           up to a limited length
+    38	 * Argument: str       - the string array
+    39	 * Argument: maxLength - the size of the array holding the string
+    40	 * Returns:  the length of the string
+    41	 * Postcondition: Nothing in str is changed
+    42	 */
+    43	int safeStringLength(char* str, int maxLength) {
+    44	    int count = 0;
+    45	    int i = 0;
+    46	    for (i = 0; i < maxLength && str[i] != '\0'; ++i)
+    47	        count++; 
+    48	    return count;
+    49	}
+    50	
+    51	
+    52	/* Function: safeStringCopy
+    53	 * Purpose:  Copy the string from source to destination
+    54	 * Argument: source          - the string to be copied
+    55	 * Argument: destination     - the array into which to copy the string
+    56	 * Argument: destinationSize - the size available for destination
+    57	 * Precondition:  the source is a valid string with null termination
+    58	 * Postcondition: the destination has the same string as the source
+    59	 *                up to one less than destinationSize
+    60	 * Postcondition: in the destination string the last element is null 
+    61	 */
+    62	void safeStringCopy(char* source, char* destination, int destinationSize) {
+    63	  int i = 0;
+    64	  for (i = 0; i < destinationSize && source[i] != '\0'; ++i)
+    65	    source[i] = destination[i];
+    66	}
+    67	
+    68	/* Function: stringCountChar
+    69	 * Purpose:  count the number of times letter appears in the string
+    70	 * Argument: letter    - a single character with letter to be counted 
+    71	 * Argument: str       - the string array
+    72	 * Argument: maxLength - the size of the array holding the string
+    73	 * Returns:  the number of times letter appears in the string
+    74	 * Postcondition: Nothing in str is changed
+    75	 */
+    76	int stringCountChar(char letter, char* str, int maxLength) {
+    77	
+    78	    int count = 0;
+    79	    int i = 0;
+    80	    for (i = 0; i < maxLength && str[i] != '\0'; ++i)
+    81	        if (str[i] == letter)
+    82	            count++; 
+    83	    return count;
+    84	}
+    85	
+    86	/* Function: stringToUpper
+    87	 * Purpose:  change a possibly mixed case string to all upper case
+    88	 * Argument: str       - the string array
+    89	 * Argument: maxLength - the size of the array holding the string
+    90	 * Returns:  nothing
+    91	 * Precondition: str points to a string
+    92	 * Postcondition: all lower case letters in str are replaced with
+    93	 *                upper case letters (of the same letter)
+    94	 * Postcondition: except for changing case, there are no other changes
+    95	 */
+    96	void stringToUpper(char* str, int maxLength) {
+    97	    int i = 0;
+    98	    for (i = 0; i < maxLength && str[i] != '\0'; ++i)
+    99	        if (str[i] >= 'a' && str[i] <= 'z')
+   100	            str[i] += ('A' - 'a');
+   101	}
+   102	
+   103	
+   104	
+   105	/* Function: replaceChar
+   106	 * Purpose:  Replace all instances of old character with new character
+   107	 * Argument: old       - the character to be replaced
+   108	 * Argument: new       - the new character to replace the old
+   109	 * Argument: str       - the string array
+   110	 * Argument: maxLength - the size of the array holding the string
+   111	 */
+   112	void replaceChar(char old, char new, char* str, int maxLength)
+   113	{
+   114	    int i = 0;
+   115	    for (i = 0; i < maxLength && str[i] != '\0'; i++)
+   116	        if (str[i] == old)
+   117	            str[i] = new;
+   118	}
+   119	
+   120	#define BUFFER_SIZE 128
+   121	int main(void)
+   122	{
+   123	    char buffer[BUFFER_SIZE] = "";
+   124	    char copy[BUFFER_SIZE] = "";
+   125	    char* result = NULL;
+   126	    int length = 0;
+   127	    int count = 0;
+   128	    int i = 0;
+   129	    printf("Enter a sentence or other string: ");
+   130	    result = fgets(buffer, BUFFER_SIZE, stdin);
+   131	    /* make sure there is at least 1 null */
+   132	    buffer[BUFFER_SIZE - 1] = '\0';
+   133	    /* remove the newline at the end */
+   134	    replaceChar('\n', '\0', buffer, BUFFER_SIZE);
+   135	    /* print the line that was read */
+   136	    printf("%s\n", buffer);
+   137	    /* demonstrate that stringLength() works correctly */
+   138	    length = stringLength(buffer);
+   139	    printf("The length of the string is %d.\n", length);
+   140	    length = safeStringLength(buffer, BUFFER_SIZE);
+   141	    for (i = 0; i < length; i++)
+   142	        printf("-");
+   143	    printf("\n");
+   144	    /* demonstrate that stringToUpper() works correctly */
+   145	    stringToUpper(buffer, BUFFER_SIZE);
+   146	    printf("%s\n", buffer);
+   147	    /* demonstrate that stringCountChar() works correctly */
+   148	    count = stringCountChar(buffer[0], buffer, BUFFER_SIZE);
+   149	    printf("The letter %c appears %d times.\n", buffer[0], count);
+   150	    /* demonstrate that stringCopy works, including length limit */
+   151	    stringCopy(buffer, copy);
+   152	    printf("%s\n", copy);
+   153	    safeStringCopy(buffer, copy, length - 5);
+   154	    printf("%s\n", copy);
+   155	    return 0;
+   156	}
+sh-4.2$ gcc -ansi -Wall hw6.c
+[01m[Khw6.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Khw6.c:125:11:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kresult[m[K’ set but not used [-Wunused-but-set-variable]
+     char* result = NULL;
+[01;32m[K           ^[m[K
+sh-4.2$ a.out
+Enter a sentence or other string: EmbryRiddle
+EmbryRiddle
+The length of the string is 11.
+-----------
+EMBRYRIDDLE
+The letter E appears 2 times.
+
+
+sh-4.2$ exit
+exit
+
+Script done on Tue 04 Aug 2020 07:13:17 PM MST

@@ -1,0 +1,32 @@
+Script started on Wed 01 Jul 2020 12:51:35 PM MST
+[?1034hsh-4.2$ cat -n hello.c
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!\n");
+     7	    printf("I did not eat my breakfast\n");
+     8	    printf("So I am really hungry now.\n");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gcc -ansi -Wall demo.c
+sh-4.2$ a.out
+Enter an integer (or q to quit): 5
+Enter an integer (or q to quit): -3
+Enter an integer (or q to quit): 7
+Enter an integer (or q to quit): -2
+Enter an integer (or q to quit): 0
+Enter an integer (or q to quit): 8
+Enter an integer (or q to quit): 6
+Enter an integer (or q to quit): q
+You entered 7 integers.
+4 of the integers are positive.
+2 of the integers are negative.
+The sum of 7 numbers is 21
+.sh-4.2$ exit
+exit
+
+Script done on Wed 01 Jul 2020 12:52:46 PM MST

@@ -1,0 +1,152 @@
+Script started on Fri 25 Sep 2020 11:22:02 PM MST
+[?1034hsh-4.2$ cat -n hwd2.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	#define MAXSIZE 5
+     4	
+     5	typedef struct{
+     6	    int rear;
+     7	    int front;
+     8	    int array[MAXSIZE];
+     9	} Queue;
+    10	
+    11	
+    12	
+    13	void insert(Queue *theQueue, int value)
+    14	{
+    15	
+    16	    theQueue->rear++;
+    17	    theQueue->array[theQueue->rear] = value;
+    18	    if (theQueue->front == -1)
+    19	       theQueue->front = theQueue->rear;       
+    20	}
+    21	
+    22	int removefromQueue(Queue* theQueue)
+    23	{
+    24	    int j;
+    25	    if (theQueue->front == -1)
+    26	    {
+    27	      printf("Cannot remove, the queue is empty\n");
+    28	      return 0;
+    29	    }
+    30	    else
+    31	    {
+    32	     if (theQueue->front == theQueue->rear)
+    33	      {
+    34	       j = theQueue->array[theQueue->front];
+    35	       theQueue->front = -1;
+    36	       theQueue->rear = -1;
+    37	      }
+    38	      else
+    39	      {
+    40	       j = theQueue->array[theQueue->front];
+    41	      theQueue->front ++;
+    42	      }
+    43	    return j;   
+    44	   }
+    45	}
+    46	
+    47	int main() 
+    48	{
+    49	    Queue my;
+    50	    my.rear = -1;
+    51	    my.front = -1;
+    52	    char userInput;
+    53	    int k;
+    54	    while (userInput != 'q')
+    55	  {
+    56	    printf("What do you want to do? [i for insert, r for remove, q for quit]\n");
+    57	    scanf(" %c", &userInput);
+    58	    if (userInput == 'i')
+    59	    {
+    60	      if (my.rear >= MAXSIZE - 1)
+    61	        {
+    62	          printf("Can't insert, the array is full\n");
+    63	        }
+    64	      else
+    65	        {
+    66	          printf("Enter an integer to be inserted into the queue: \n");
+    67	          scanf("%d", &k);
+    68	          insert(&my, k);
+    69	        }
+    70	    }
+    71	    if (userInput == 'r')
+    72	    {
+    73	        printf("%d removed from queue\n", removefromQueue(&my));
+    74	    }
+    75	  }
+    76	    return 0;
+    77	}
+    78	
+sh-4.2$ gcc -ansi -Wall hwd2.c
+sh-4.2$ a.out
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+Cannot remove, the queue is empty
+0 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+8
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+6
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+8 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+6 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+Cannot remove, the queue is empty
+0 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+10
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+7
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+12
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+2
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Enter an integer to be inserted into the queue: 
+25
+What do you want to do? [i for insert, r for remove, q for quit]
+i
+Can't insert, the array is full
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+10 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+7 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+12 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+2 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+25 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+r
+Cannot remove, the queue is empty
+0 removed from queue
+What do you want to do? [i for insert, r for remove, q for quit]
+q
+sh-4.2$ exit
+exit
+
+Script done on Fri 25 Sep 2020 11:48:38 PM MST

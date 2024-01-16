@@ -1,0 +1,163 @@
+Script started on Sun 09 Aug 2020 12:45:35 PM MST
+[?1034hsh-4.2$ cat -n hw8.c
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	/* Functions needed for part 1 of assignment 8 - writing to a file */
+     5	double getRandomDouble(double lowerLimit, double upperLimit);
+     6	int fillRandom(double array[], int length,
+     7	               double lowerLimit, double upperLimit);
+     8	void writeArray(FILE* fp, const double array[], int length);
+     9	void writeToFile(const char* fileName, const double array[], int length);
+    10	void part1(void);
+    11	/* Additional functions for part 2 of assignment 8 - reading from a file */
+    12	int readArray(FILE* fp, double array[], int maxCount);
+    13	int readFromFile(const char* filename, double array[], int size);
+    14	void part2(void);
+    15	
+    16	int main(void) {
+    17	    part1();
+    18	    part2();
+    19	    return EXIT_SUCCESS;
+    20	}
+    21	
+    22	#define ARRAY_SIZE 100
+    23	void part1(void) {
+    24	    double array[ARRAY_SIZE];
+    25	    int arrayLength = 0;
+    26	    arrayLength = fillRandom(array, ARRAY_SIZE, 10, 75);
+    27	    writeToFile( "data1.txt", array, arrayLength);
+    28	    arrayLength = fillRandom(array, 13, 130.2, 130.7);
+    29	    writeToFile( "data2.txt", array, arrayLength);
+    30	}
+    31	
+    32	
+    33	#define BIG_BUFFER_SZ 1024
+    34	#define SMALL_BUFFER_SZ 48
+    35	void part2(void) {
+    36	    double buffer1[BIG_BUFFER_SZ];
+    37	    double buffer2[BIG_BUFFER_SZ];
+    38	    double buffer3[SMALL_BUFFER_SZ];
+    39	    int buffer1Len = 0;
+    40	    int buffer2Len = 0;
+    41	    int buffer3Len = 0;
+    42	    fputs("data1.txt\n", stdout);
+    43	    buffer1Len = readFromFile("data1.txt", buffer1, BIG_BUFFER_SZ);
+    44	    writeArray(stdout, buffer1, buffer1Len);
+    45	    fputs("data2.txt\n", stdout);
+    46	    buffer2Len = readFromFile("data2.txt", buffer2, BIG_BUFFER_SZ);
+    47	    writeArray(stdout, buffer2, buffer2Len);
+    48	    fputs("data3.txt\n", stdout);
+    49	    buffer3Len = readFromFile("data3.txt", buffer3, SMALL_BUFFER_SZ);
+    50	    writeArray(stdout, buffer3, buffer3Len);
+    51	    fputs("data1.txt\n", stdout);
+    52	    buffer3Len = readFromFile("data1.txt", buffer3, SMALL_BUFFER_SZ);
+    53	    writeArray(stdout, buffer3, buffer3Len);
+    54	}
+    55	
+    56	
+    57	/* implement your 5 functions here (or 6 if you use a getRandomDouble) */
+    58	double getRandomDouble(double lowerLimit, double upperLimit) {
+    59	    double rangeOfReals = upperLimit - lowerLimit;
+    60	    double normalizedRand = rand() / (RAND_MAX + 1.0);
+    61	    return (normalizedRand * rangeOfReals + lowerLimit);
+    62	 }
+    63	int fillRandom(double array[], int length,
+    64	               double lowerLimit, double upperLimit) {
+    65	    int i = 0;
+    66	    for (i = 0; i < length; i++)
+    67	         array[i] = getRandomDouble(lowerLimit, upperLimit);
+    68	    return i;
+    69	}
+    70	
+    71	void writeToFile(const char* fileName, const double array[], int length) {
+    72	    FILE* fp = fopen(fileName, "w");
+    73	    fputs("Start of data\n", fp);
+    74	    writeArray(fp, array, length);
+    75	    fputs("End of data\n", fp);
+    76	    fclose(fp);
+    77	
+    78	}
+    79	
+    80	void writeArray(FILE* fp, const double array[], int length) {
+    81	    int i = 0;
+    82	    for (i = 0; i < length; ++i) {
+    83	        if (i % 10 == 0 && i > 0)
+    84	            fputc('\n', fp);
+    85	        fprintf(fp, "%7.2lf", array[i]); 
+    86	    }
+    87	    fputc('\n', fp);
+    88	}
+    89	
+    90	
+    91	int readArray(FILE* fp, double array[], int maxCount) {
+    92	    fscanf(fp, "%*[^0-9]");
+    93	    int i = 0;
+    94	    for(i = 0; i < maxCount && fscanf(fp, "%lf", &array[i]) > 0; ++i);
+    95	    return i;
+    96	}
+    97	
+    98	
+    99	
+   100	
+   101	
+   102	int readFromFile(const char* filename, double array[], int size) {
+   103	    int i = 0;
+   104	    FILE* fp = fopen(filename, "r");
+   105	    if (fp != NULL) {
+   106	        i = readArray(fp, array, size);
+   107	        fclose(fp); 
+   108	    }
+   109	    else
+   110	         perror(filename);
+   111	    return i;
+   112	}
+   113	
+   114	
+sh-4.2$ gcc -ansi -Wall hw8.c
+sh-4.2$ a.out
+data1.txt
+  64.61  35.63  60.90  61.90  69.26  22.84  31.79  59.93  28.06  46.01
+  41.03  50.88  33.71  43.37  71.89  69.55  51.32  56.62  19.20  49.45
+  11.06  25.79  18.92  62.27  20.18  36.06  18.44  17.07  74.93  24.19
+  43.34  64.54  49.82  29.24  51.44  44.08  42.08  73.23  29.01  60.14
+  44.24  60.04  36.01  67.95  28.42  32.91  62.50  69.74  14.53  71.71
+  44.19  15.59  22.49  53.11  67.87  32.68  14.17  11.30  39.75  14.10
+  25.49  73.09  68.64  65.31  27.33  45.08  34.39  59.42  43.31  53.40
+  44.55  12.55  38.45  70.57  70.50  56.86  28.48  58.00  51.60  33.01
+  54.71  20.79  38.61  67.20  63.90  31.47  24.88  68.07  32.77  54.63
+  72.17  48.26  52.72  65.81  38.57  70.06  35.90  62.96  54.47  69.21
+data2.txt
+ 130.44 130.31 130.68 130.66 130.27 130.64 130.52 130.42 130.51 130.34
+ 130.59 130.35 130.42
+data3.txt
+data3.txt: No such file or directory
+
+data1.txt
+  64.61  35.63  60.90  61.90  69.26  22.84  31.79  59.93  28.06  46.01
+  41.03  50.88  33.71  43.37  71.89  69.55  51.32  56.62  19.20  49.45
+  11.06  25.79  18.92  62.27  20.18  36.06  18.44  17.07  74.93  24.19
+  43.34  64.54  49.82  29.24  51.44  44.08  42.08  73.23  29.01  60.14
+  44.24  60.04  36.01  67.95  28.42  32.91  62.50  69.74
+sh-4.2$ cat data1.txt
+Start of data
+  64.61  35.63  60.90  61.90  69.26  22.84  31.79  59.93  28.06  46.01
+  41.03  50.88  33.71  43.37  71.89  69.55  51.32  56.62  19.20  49.45
+  11.06  25.79  18.92  62.27  20.18  36.06  18.44  17.07  74.93  24.19
+  43.34  64.54  49.82  29.24  51.44  44.08  42.08  73.23  29.01  60.14
+  44.24  60.04  36.01  67.95  28.42  32.91  62.50  69.74  14.53  71.71
+  44.19  15.59  22.49  53.11  67.87  32.68  14.17  11.30  39.75  14.10
+  25.49  73.09  68.64  65.31  27.33  45.08  34.39  59.42  43.31  53.40
+  44.55  12.55  38.45  70.57  70.50  56.86  28.48  58.00  51.60  33.01
+  54.71  20.79  38.61  67.20  63.90  31.47  24.88  68.07  32.77  54.63
+  72.17  48.26  52.72  65.81  38.57  70.06  35.90  62.96  54.47  69.21
+End of data
+sh-4.2$ cat data2.txt
+Start of data
+ 130.44 130.31 130.68 130.66 130.27 130.64 130.52 130.42 130.51 130.34
+ 130.59 130.35 130.42
+End of data
+sh-4.2$ exit
+exit
+
+Script done on Sun 09 Aug 2020 12:46:26 PM MST

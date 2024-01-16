@@ -1,0 +1,23 @@
+Script started on Tue 30 Jun 2020 11:19:27 AM MST
+[?1034hsh-4.2$ cat-1 hello.c[1P[C[1P hello.cn hello.c[1@-[1@ [1P[C[1@ [C[C[C[C[C[C[C[C[C[C
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!\n");
+     7	    printf("I did not eat my breakfast\n");
+     8	    printf("So I am really hungry now.\n");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gcc -ansi -Wall hello.c
+sh-4.2$ a.out
+Greetings Earthlings!I come from PhoneixI have learned Matlab from EGR115and it is pretty fun!
+I did not eat my breakfast
+So I am really hungry now.
+sh-4.2$ exit
+exit
+
+Script done on Tue 30 Jun 2020 11:20:44 AM MST

@@ -1,0 +1,45 @@
+Script started on Wed 01 Jul 2020 12:47:45 PM MST
+[?1034hsh-4.2$ cat -n demo.c
+     1	#include <stdio.h>
+     2	int  main() {
+     3	    int userInput = 475;
+     4	    int count = 0;
+     5	    int sum = 0;
+     6	    int numberOfPositives = 0;
+     7	    int numberOfNegatives = 0;
+     8	    printf("Enter an integer (or q to quit): ");
+     9	    while (scanf("%d", &userInput) > 0) { 
+    10	        count++;
+    11	        sum += userInput; 
+    12	        if (userInput > 0)
+    13	            numberOfPositives++;
+    14	        if (userInput < 0)
+    15	            numberOfNegatives++;
+    16	        printf("Enter an integer (or q to quit): ");
+    17	    }
+    18	    printf("You entered %d integers.\n",count);
+    19	    printf("%d of the integers are positive.\n", numberOfPositives);
+    20	    printf("%d of the integers are negative.\n", numberOfNegatives);
+    21	    printf("The sum of %d numbers is %d\n.", count, sum);
+    22	    return 0;
+    23	}
+sh-4.2$ gcc -ansi -Wall hw2.c
+gcc: error: hw2.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+sh-4.2$ gcc -ansi -Wall demo.c
+sh-4.2$ a.out
+Enter an integer (or q to quit): 5
+Enter an integer (or q to quit): -4 3
+Enter an integer (or q to quit): 0
+Enter an integer (or q to quit): 7
+Enter an integer (or q to quit): -2
+Enter an integer (or q to quit): q
+You entered 5 integers.
+2 of the integers are positive.
+2 of the integers are negative.
+The sum of 5 numbers is 7
+.sh-4.2$ exit
+exit
+
+Script done on Wed 01 Jul 2020 12:50:13 PM MST

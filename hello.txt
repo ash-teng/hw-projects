@@ -1,0 +1,14 @@
+Script started on Thu 11 Jan 2024 07:32:38 PM MST
+[?1034hsh-4.2$ cat -n hello.adb
+     1	with ada.text_IO; use ada.text_IO;
+     2	procedure hello is  
+     3	begin
+     4	   put(" Hello from the world of Ada!");
+     5	end hello; 
+     6	
+sh-4.2$ hello
+ Hello from the world of Ada!
+sh-4.2$ exit
+exit
+
+Script done on Thu 11 Jan 2024 07:32:57 PM MST

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct listItem
+{
+    int someInteger;
+    struct listItem *next;
+}LIST_ITEM;
+
+
+LIST_ITEM *start = NULL, *temp;
+    temp = malloc(sizeof(LIST_ITEM));
+    printf("Enter your integer: ");
+    scanf("%d", &(temp->someInteger));
+    temp->next = start;
+    start = temp;
+
+void print() {
+LIST_ITEM *trvPtr = start;
+while (trvPtr != NULL)
+ {
+    printf("%d", trvPtr->someInteger);
+    trvPtr = trvPtr->next;
+ }
+}
+
+if (start == NULL)
+    printf("Can't delete from an empty list");
+else if (start->someInteger == valueToBeDeleted)
+    start = start->next;
+else
+ {
+    delPtr = start;
+    while ((delPtr->next != NULL) &&
+            (delPtr->next->someInteger != valueToBeDeleted))
+        delPtr = delPtr->next;
+    if (delPtr->next = NULL)
+      printf("Can't find %d in the list", valueToBeDeleted);
+    else
+      delPtr->next = (delPtr->next)->next;
+ }
+
+
+

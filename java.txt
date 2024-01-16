@@ -1,0 +1,29 @@
+Script started on Mon 22 Feb 2021 06:18:28 PM MST
+[?1034hsh-4.2$ cat -n Hello.java
+     1	public class Hello {
+     2	 // This is the correct signature for a main in Java
+     3	 public static void main(String[] args) {
+     4	 // No cout or printf. Uses a static method in System.out.
+     5	 System.out.println("Hello Java!");
+     6	 // Object variables are pointers. Use new to create object.
+     7	 Hello greeter = new Hello();
+     8	 // args are words included on command line after "java Hello"
+     9	 // Arrays are object with properties, like length
+    10	 for (int i = 0; i < args.length; ++i)
+    11	 greeter.greet(args[i]);
+    12	 // No free/delete after new Hello. Memory is garbage collected.
+    13	 }
+    14	 // No separate header file. Define functions in class declaration.
+    15	 public void greet(String name) {
+    16	 // The + operator for stringsconcatenates
+    17	 System.out.println("Hello " + name + "!");
+    18	 }
+    19	} // Unlike C++, no semicolon at the end of a class declaration.
+sh-4.2$ javac Hello.java
+sh-4.2$ java Hello Drake
+Hello Java!
+Hello Drake!
+sh-4.2$ exit
+exit
+
+Script done on Mon 22 Feb 2021 06:19:07 PM MST

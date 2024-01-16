@@ -1,0 +1,73 @@
+Script started on Sun 09 Aug 2020 12:06:00 PM MST
+[?1034hsh-4.2$ cat -n hw12.c
+     1	#include <stdio.h>  /* for printf */
+     2	#include <stdlib.h> /* for malloc, free, NULL */
+     3	#include "Link.h"
+     4	
+     5	Link* getNewLink(int value, Link* next);
+     6	void printLinkedList(Link* head); /* function for steps 2 and 4 */
+     7	int sumOfLinkedList(Link* head);  /* function for step 5 */
+     8	
+     9	int main() {
+    10	    Link* head = NULL;
+    11	    int array[6] = {7, 1, -4, 16, 0, 3};
+    12	    int arrLen = 6;
+    13	    /* add the value -2 to the linked list */
+    14	    /* YOUR CODE FOR STEP 1 GOES HERE */
+    15	    head = getNewLink(-2, head);
+    16	    printf("%d\n", head->value);  
+    17	    /* print the value at head */
+    18	    /* YOUR CODE FOR STEP 2 GOES HERE */
+    19	    /* add the 6 values from the array to the LinkedList */
+    20	    /* YOUR CODE FOR STEP 3 GOES HERE */
+    21	    int i = 0;
+    22	    for (i = 0; i < arrLen; i++ ) {
+    23	        head = getNewLink(array[i], head);
+    24	    }
+    25	    printLinkedList(head);
+    26	    printf("The sum is: %d\n", sumOfLinkedList(head));
+    27	    return 0;
+    28	}
+    29	
+    30	Link* getNewLink(int value, Link* next) {
+    31	    Link* newLink = (Link*)malloc(sizeof(Link));
+    32	    newLink->value = value; 
+    33	    newLink->next = next; 
+    34	    return newLink;
+    35	}
+    36	
+    37	
+    38	void printLinkedList(Link* head) {
+    39	    Link* cursor = head;
+    40	    for (cursor = head; cursor != NULL; cursor = cursor->next)
+    41	    printf("%d\n", cursor->value);
+    42	    
+    43	
+    44	}
+    45	
+    46	int sumOfLinkedList(Link* head) {
+    47	    int sum = 0;
+    48	    Link* cursor = head;
+    49	    for (cursor = head; cursor != NULL; cursor = cursor->next)
+    50	        sum += cursor->value;
+    51	    return sum;
+    52	}
+    53	
+    54	
+    55	
+    56	
+sh-4.2$ gcc -ansi -Wall hw12.c
+sh-4.2$ a.out
+-2
+3
+0
+16
+-4
+1
+7
+-2
+The sum is: 21
+sh-4.2$ exit
+exit
+
+Script done on Sun 09 Aug 2020 12:06:26 PM MST

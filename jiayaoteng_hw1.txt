@@ -1,0 +1,66 @@
+Script started on Sat 09 Sep 2023 07:52:39 PM MST
+[?1034hsh-4.2$ exita.outgcc -ansi -Wall JiaYao_LinkedList_Assgn_0.c[C[C[C[C[C[C[C[C[9Pcat -n[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+     1	/* this work is done by Teng JiaYao*/
+     2	/* this assignment is to caculate the sum of the linked list*/ 
+     3	#include <stdio.h>  /* for printf */
+     4	#include <stdlib.h> /* for malloc, free, NULL */
+     5	#include "Link.h"
+     6	
+     7	Link* getNewLink(int value, Link* next);
+     8	void printLinkedList(Link* head); /* function for steps 2 and 4 */
+     9	int sumOfLinkedList(Link* head);  /* function for step 5 */
+    10	
+    11	int main() {
+    12	    Link* head = NULL;
+    13	    int array[6] = {7, 1, -4, 16, 0, 3};
+    14	    int arrLen = 6;
+    15	    /* YOUR CODE FOR STEP 1 GOES HERE */
+    16	    head = getNewLink(-2, head);/* add the value -2 to the linked list */
+    17	    printf("%d\n", head->value);  /* print the value at head */
+    18	    /* add the 6 values from the array to the LinkedList */
+    19	    int i = 0;
+    20	    for (i = 0; i < arrLen; i++ ) {
+    21	        head = getNewLink(array[i], head);
+    22	    }
+    23	    printLinkedList(head);
+    24	    printf("The sum is: %d\n", sumOfLinkedList(head));
+    25	    return 0;
+    26	}
+    27	
+    28	/* calculate the new link list with the value and next pointer*/
+    29	 /* YOUR CODE FOR STEP 2 GOES HERE */
+    30	Link* getNewLink(int value, Link* next) {
+    31	    Link* newLink = (Link*)malloc(sizeof(Link));
+    32	    newLink->value = value; 
+    33	    newLink->next = next; 
+    34	    return newLink;
+    35	}
+    36	
+    37	/*print the link list*/
+    38	void printLinkedList(Link* head) {
+    39	    Link* cursor = head;
+    40	    for (cursor = head; cursor != NULL; cursor = cursor->next)
+    41	    printf("%d ", cursor->value);
+    42	}
+    43	
+    44	/* YOUR CODE FOR STEP 3 GOES HERE */
+    45	/* calculate the sum*/
+    46	int sumOfLinkedList(Link* head) {
+    47	    int sum = 0;
+    48	    Link* cursor = head;
+    49	    for (cursor = head; cursor != NULL; cursor = cursor->next)
+    50	        sum += cursor->value;
+    51	    return sum;
+    52	}
+    53	
+    54	
+    55	
+    56	
+sh-4.2$ cat -n JiaYao_LinkedList_Assgn_0.c[C[C[C[C[C[C[C[Cexit[Ka.outgcc -ansi -Wall JiaYao_LinkedList_Assgn_0.c[C[C[C[C[C[C[C[C[9Pcat -n[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9@gcc -ansi -Wall[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+sh-4.2$ gcc -ansi -Wall JiaYao_LinkedList_Assgn_0.c[C[C[C[C[C[C[C[C[9Pcat -n[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ka.out
+-2
+3 0 16 -4 1 7 -2 The sum is: 21
+sh-4.2$ a.outgcc -ansi -Wall JiaYao_LinkedList_Assgn_0.c[C[C[C[C[C[C[C[C[9Pcat -n[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K
+exit
+
+Script done on Sat 09 Sep 2023 07:53:03 PM MST
