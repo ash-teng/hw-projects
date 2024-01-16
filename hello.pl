@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use strict; # please tell us if anything looks amiss
+use warnings;
+sub hello { # subroutines don’t have arg lists.
+ print("Hello " . $_[0] . "\n"); # $_ is args if used in the call
+}
+print("Hello Perl!\n");
+while (<STDIN>) { # while there is input
+ my $line = $_; # $line variable gets current input line
+ my @words = split(/\s+/, $line);# split line on spaces into a word array
+ foreach my $name (@words) { # for each name in the array
+ hello("$name"); # don’t try to evaluate it, just pass it
+ }
+}

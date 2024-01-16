@@ -1,0 +1,5 @@
+Script started on Sat 25 Sep 2021 12:20:41 AM MST
+[?1034hsh-4.2$ cat [K[K[K[Kexit
+exit
+
+Script done on Sat 25 Sep 2021 12:20:51 AM MST

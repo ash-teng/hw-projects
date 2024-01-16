@@ -1,0 +1,28 @@
+Script started on Mon 22 Feb 2021 06:08:10 PM MST
+[?1034hsh-4.2$ cat - [Kn hello.f90
+     1	! comments start with exclamation mark
+     2	 PROGRAM HELLO
+     3	 CHARACTER :: ARG*32                  ! legacy syntax for string
+     4	 ! CHARACTER(LEN = 32) :: ARG         ! newer preferred
+     5	 ! CHARACTER, DIMENSION(32) :: CARRAY ! this is an array of chars
+     6	 PRINT *, 'Hello Fortran!'
+     7	 ! The famous Fortran DO loop, I is implicit integer because of letter i 
+     8	 DO I = 1, IARGC()                    ! IARGC gets argc returns int 
+     9	 CALL GETARG(I, ARG)                  ! subroutine to put arg[i] in ARG
+    10	 CALL GREET(ARG) 
+    11	 END DO 
+    12	 END
+    13	 
+    14	 SUBROUTINE GREET(s) 
+    15	 CHARACTER :: s*32 
+    16	 ! CHARACTER(LEN = *) :: s 
+    17	 PRINT *, 'Hello ' //   s               ! // is string concatenation 
+    18	 END
+sh-4.2$ gfortran -o hello_f hello.f90
+sh-4.2$ hello_f Drake
+ Hello Fortran!
+ Hello Drake                           
+sh-4.2$ exit
+exit
+
+Script done on Mon 22 Feb 2021 06:09:13 PM MST

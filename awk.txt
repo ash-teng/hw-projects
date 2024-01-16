@@ -1,0 +1,29 @@
+Script started on Mon 22 Feb 2021 05:17:55 PM MST
+[?1034hsh-4.2$ cat -n hello.awk
+     1	# this is the contents of hello.awk
+     2	function greet(n) {
+     3	 # print outputs a sequence of fields separated by the OFS delimiter
+     4	 print "Hello", n
+     5	}
+     6	BEGIN {
+     7	 print "Hello Awk!"
+     8	}
+     9	{
+    10	 # process each input field on the current line, one at a time
+    11	 for (i=1; i<=NF; ++i)
+    12	 greet($i)
+    13	}
+    14	END {
+    15	 print "bye"
+    16	}
+sh-4.2$ aa[Kwk -f hello.awk
+Hello Awk!
+bye
+sh-4.2$ echo ""D"r"a"k"e"[C | awk -f hello.awk
+Hello Awk!
+Hello Drake
+bye
+sh-4.2$ exit
+exit
+
+Script done on Mon 22 Feb 2021 05:22:09 PM MST

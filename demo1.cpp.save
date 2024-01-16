@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 23;
+    double y = 5.7;
+    cout << "Hello World!" << endl;
+//    return EXIT_SUCCESS;
+    return 0;
+
+}

@@ -1,0 +1,26 @@
+Script started on Mon 22 Feb 2021 05:35:53 PM MST
+[?1034hsh-4.2$ gcc -o hello[K[K[K[K[K[K[K[K[K[K[K[Kcat -n helo[Klo.c
+     1	#include <stdio.h>
+     2	/* function prototype needed for use before definition */
+     3	void hello(char* name);
+     4	int main(int argc, char* argv[]) {
+     5	 int i = 0;
+     6	 /* no need to use printf to output a string with no variables */
+     7	 fputs("Hello C!\n", stdout);
+     8	 /* argc is the number of tokens in the whole command line */
+     9	 for (i = 0; i < argc; ++i)
+    10	 hello(argv[i]);
+    11	 return 0;
+    12	}
+    13	void hello(char* name) {
+    14	 printf("Hello %s\n", name);
+    15	}
+sh-4.2$ gcc -o hello-c hello.c
+sh-4.2$ hello_c Drake
+Hello C!
+Hello hello_c
+Hello Drake
+sh-4.2$ exit
+exit
+
+Script done on Mon 22 Feb 2021 05:37:01 PM MST

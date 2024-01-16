@@ -1,0 +1,54 @@
+Script started on Fri 08 Oct 2021 03:16:36 PM MST
+[?1034hsh-4.2$ cat -n 420hw1.c
+     1	#include <stdio.h> 
+     2	#include <unistd.h>
+     3	#include <sys/types.h>
+     4	#include <stddef.h>
+     5	
+     6	int main()
+     7	{
+     8	    pid_t pid;
+     9	    int i = 0;
+    10	    int parent = getpid();
+    11	    for (i = 0; i < 3; i++)
+    12	        {
+    13	          pid = fork();
+    14	          if (pid < 0)
+    15	            {
+    16	              printf("Fork Failed");
+    17	              return 1;
+    18	            }
+    19	          else if (pid == 0)
+    20	            {
+    21	              printf("I am child#%d, my pid is %d; my parent's pid is %d\n", i+1, getpid(), parent);
+    22	              if (i == 1)
+    23	                {
+    24	                  execv("mysecondprogram.exe", NULL);
+    25	                }
+    26	               exit(0);
+    27	            }
+    28	          else
+    29	            {
+    30	              printf("Parent, my pid is %d: Spawned child #%d whose pid is %d\n", parent, i+1, pid);
+    31	            }
+    32	        }
+    33	    return 0;
+    34	}
+    35	              
+sh-4.2$ gcc 420hw1.c
+[01m[K420hw1.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[K420hw1.c:26:16:[m[K [01;35m[Kwarning: [m[Kincompatible implicit declaration of built-in function ‘[01m[Kexit[m[K’ [enabled by default]
+                exit(0);
+[01;32m[K                ^[m[K
+sh-4.2$ a.out
+Parent, my pid is 66987: Spawned child #1 whose pid is 66988
+I am child#1, my pid is 66988; my parent's pid is 66987
+Parent, my pid is 66987: Spawned child #2 whose pid is 66989
+Parent, my pid is 66987: Spawned child #3 whose pid is 66990
+I am child#3, my pid is 66990; my parent's pid is 66987
+I am child#2, my pid is 66989; my parent's pid is 66987
+sh-4.2$ Process #66989, now running program"mysecondprogram.exe"My parent's PID is 1
+exit
+exit
+
+Script done on Fri 08 Oct 2021 03:17:05 PM MST

@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+rand(1,6)
+}

@@ -1,0 +1,12 @@
+Script started on Sun 07 Mar 2021 09:27:04 PM MST
+[?1034hsh-4.2$ cat -n[K[K[K[K[K[Ka.out g++ -std=c++11 IntegerBuffer.cpp testHW2.cpp
+sh-4.2$ a.out
+206
+   23   12   -6   14    0   37  -26    5   11   -4
+   16   12    8   -3    6   -2   23   12   -6   14
+    0   37  -26    5   11   -4   16   12    8   -3
+    6   -2
+sh-4.2$ exit
+exit
+
+Script done on Sun 07 Mar 2021 09:30:09 PM MST

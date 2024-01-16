@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int getUserInteger() {
+    int userInteger = 0;
+    printf("Enter your integer:");
+    scanf("%d", &userInteger);
+    return userInteger;
+}
+void printSum(int value1, int value2) {
+    printf("The sum of two results is %d\n", value1+value2);
+
+}
+
+int main() {
+    int value1;
+    int value2;
+    value1 = getUserInteger();
+    value2 = getUserInteger();
+    printf("The sum of two results is %d\n", value1 + value2);
+
+    return 0;
+}
+
+
+

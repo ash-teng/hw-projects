@@ -1,0 +1,28 @@
+Script started on Mon 22 Feb 2021 05:52:25 PM MST
+[?1034hsh-4.2$ cat -n hello.cpp
+     1	#include <iostream>
+     2	#include <string>
+     3	// namespace scoping to support large distributed code
+     4	using namespace std;
+     5	void hello(string name);
+     6	int main(int argc, char* argv[]) {
+     7	 cout << "Hello C++!" << endl;
+     8	 cout << "Hello Drake" << endl;
+     9	 // argc is number of command line tokens
+    10	 for (int i = 0; i < argc; ++i)
+    11	 // string is a constructor and returns a string object
+    12	 hello(string(argv[i]));
+    13	 return 0;
+    14	}
+    15	void hello(string name) {
+    16	 cout << "Hello " << name << endl;
+    17	}
+sh-4.2$ g++ hello.cpp
+sh-4.2$ a.out
+Hello C++!
+Hello Drake
+Hello a.out
+sh-4.2$ exit
+exit
+
+Script done on Mon 22 Feb 2021 05:52:59 PM MST

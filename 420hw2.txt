@@ -1,0 +1,138 @@
+Script started on Sat 09 Oct 2021 02:11:30 AM MST
+[?1034hsh-4.2$ cat 420hw22[K_v1.c
+#include <stdio.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+
+void *print(void *arg);
+
+int main() 
+{
+    pthread_t thread = 0;
+    int i = 0;
+    printf("main thread here; pid is %d, tid is %lu\n", getpid(), pthread_self());
+    i = pthread_create(&thread, NULL, print, NULL);
+    if (i == 0) 
+	{
+        printf("main successfully created a new thread with TID of %lu\n", thread);
+    } 
+	else 
+	{
+        printf("An error has occured");
+    }
+}
+
+void *print(void *arg) 
+{
+    printf("   second thread here, my tid is %lu but I'm still in process %d\n", pthread_self(), getpid());
+    return NULL;
+}
+sh-4.2$ gcc 420hw2_v1.c -o [K[K[K[K -lthpth[C[Cread -o hw2v1.exe
+sh-4.2$ cat 420hw2_v2.c
+
+ 
+#include <stdio.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+
+void *print(void *arg);
+
+int main() 
+{
+    pthread_t thread = 0;
+    int i = 0;
+    printf("main thread here; pid is %d, tid is %lu\n", getpid(), pthread_self());
+    i = pthread_create(&thread, NULL, print, NULL);
+    if (i == 0) 
+	{
+        printf("main successfully created a new thread with TID of %lu\n", thread);
+    } 
+	else 
+	{
+        printf("An error has occured");
+    }
+    i = pthread_join(thread,NULL);
+    if (i == 0) 
+	{
+        printf("main: second thread has terminated, main will now exit\n", thread);
+    } 
+	else 
+	{
+        printf("An error has occured");
+    }
+}
+
+void *print(void *arg) 
+{
+    printf("   second thread here, my tid is %lu but I'm still in process %d\n", pthread_self(), getpid());
+    return NULL;
+}
+sh-4.2$ gcc 420hw2_v2.c -lpthread -o hw2v2.exe
+sh-4.2$ cat 420hw3[K2_v3.c
+
+ 
+#include <stdio.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+
+void *print(void *arg);
+
+int main() 
+{
+    pthread_t thread = 0;
+    char c = 'B';
+    int i = 0;
+    printf("main thread here; pid is %d, tid is %lu\n", getpid(), pthread_self());
+    i = pthread_create(&thread, NULL, print, &c);
+    if (i == 0) 
+	{
+        printf("main: successfully created a new thread with TID of %lu\n", thread);
+    } 
+	else 
+	{
+        printf("An error has occured");
+    }
+    i = pthread_join(thread,NULL);
+    if (i == 0) 
+	{
+        printf("main: second thread has terminated, main will now exit\n", thread);
+    } 
+	else 
+	{
+        printf("An error has occured");
+    }
+}
+
+void *print(void *arg) 
+{
+    printf("   second thread here, my tid is %lu but I'm still in process %d\n", pthread_self(), getpid());
+    printf("   I received a '%s' when I was created\n", arg);
+    return NULL;
+}
+sh-4.2$ gcc 420hw2_v3 -lpthread -o hw2v3.exe
+gcc: error: 420hw2_v3: No such file or directory
+sh-4.2$ gcc 420hw2_v3.c -lpthread -o hw2v3.exe
+sh-4.2$ hw2v1.exx[Ke
+main thread here; pid is 124978, tid is 140525496358848
+main successfully created a new thread with TID of 140525494220544
+sh-4.2$ hw2v2.exe
+main thread here; pid is 124989, tid is 140561108076480
+main successfully created a new thread with TID of 140561105938176
+   second thread here, my tid is 140561105938176 but I'm still in process 124989
+main: second thread has terminated, main will now exit
+sh-4.2$ hw2v3.exe
+main thread here; pid is 125000, tid is 140242164983744
+main: successfully created a new thread with TID of 140242162845440
+   second thread here, my tid is 140242162845440 but I'm still in process 125000
+   I received a 'B' when I was created
+main: second thread has terminated, main will now exit
+sh-4.2$ exit
+exit
+
+Script done on Sat 09 Oct 2021 02:16:31 AM MST

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+
+void *something(void *arg);
+
+int main() 
+{
+    pthread_t secondThread = 0;
+    char c = 'B';
+    int errorCode = 0;
+    printf("main thread here; pid is %d, tid is %lu\n", getpid(), pthread_self());
+    errorCode = pthread_create(&secondThread, NULL, something, NULL);
+    if (errorCode == 0) 
+	{
+        printf("main successfully created a new thread with TID of %lu\n", secondThread);
+    } 
+	else 
+	{
+        printf("An error has occured in create: %s", strerror(errorCode));
+    }
+}
+
+void *something(void *arg) 
+{
+    printf("second thread here, my tid is %lu but I'm still in process %d\n", pthread_self(), getpid());
+    return NULL;
+}

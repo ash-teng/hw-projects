@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int doThis() 
+{
+    printf("I am doing this.\n");
+    return 7;
+}
+int main() 
+{
+    printf("I am starting in main\n"); 
+    doThis();
+    printf("I just did this\n");
+    do This();
+    printf("I did it again\n");
+    return 0;
+}

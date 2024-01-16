@@ -1,0 +1,418 @@
+Script started on Tue 30 Jun 2020 10:11:36 AM MST
+[?1034hsh-4.2$ cat -n hello.c
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!");
+     7	    printf("I did not eat my breakfast");
+     8	    printf("So I am really hungry now");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gcc-ansi -wall hello.c[Ksh-4.2$ gcc-ansi -wall hello.c
+sh: gcc-ansi: command not found
+sh-4.2$ gcc- ansi -wall hello.c
+sh: gcc-: command not found
+sh-4.2$ gcc -ansi -wall hello.c
+gcc: error: unrecognized command line option ‘-wall’
+sh-4.2$ [Ksh-4.2$ [Ksh-4.2$ [Ksh-4.2$ gcc-ansi–Wall hw1.c
+sh: gcc-ansi–Wall: command not found
+sh-4.2$ gcc-ansi–Wall hw1.c-[K[1@-[1P[1P[1@i[C[1P[1@-[1P[C[1@-
+sh: gcc-ansi-Wall: command not found
+sh-4.2$ c-ansi-Wall hw1.c
+sh: c-ansi-Wall: command not found
+sh-4.2$ cler
+sh: cler: command not found
+sh-4.2$ clear
+[3;J[H[2Jsh-4.2$ script –c sh hw1_you.txtdrake
+Script started, file is –c
+[01;34m#=======================================================================#
+[1;36m                  Embry Riddle Aeronautical University         
+[01;34m#=======================================================================#
+[01;37m  HOSTNAME =[1;36m prclab1.erau.edu  
+[01;37m  LOCATION =[01;32m Prescott                      
+[01;37m  USER     =[01;35m tengj1                      
+[01;37m  UPTIME   =[01;33m 16 days, 23:30, 11 users, load average hours,  0.07, 0.10, 0.12 minutes  
+[01;37m  IP       = [2;36m172.19.241.11  
+[01;37m  OS       = [01;31mOracle Linux Server release 7.7  
+[01;37m  ARCH     = x86_64                     
+[01;37m  KERNEL   = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  UPTRACK  = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  Date     = Tue Jun 30 10:32:19 MST 2020                   
+[01;34m  CPUCORES = 6 [01;34m                                    CPU_AVG  = 0%
+[021;32m  MEMORY (total) = 7707 Mb     [01;32m                      MEM_AVG  = 22%
+[021;32m  SWAP (total)   = 4091 Mb [01;32m                     SWAP_AVG = 0%  
+[01;37m  LOAD AVERAGE  = [01;35m0.07, 0.10, 0.12                      
+[01;34m#=======================================================================#[0m
+
+             [01;31mUNAUTHORIZED ACCESS TO THIS SYSTEM IS PROHIBITED.
+[01;37mAccess to this system is restricted to authorized users only. Unauthorized
+[01;37maccess, use, or modification of this system, or any data stored therein is
+[01;37mstrictly prohibited by University policies and applicable law.
+
+ [01;31m** [01;33mIf you are not authorized to access this system, exit immediately! [01;31m**
+
+[01;37mUsers of this system expressly consent to activity monitoring. Unauthorized
+[01;37musers may be subject to administrative, criminal, or other legal action.
+
+]0;tengj1@prclab1:~[?1034h[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m clear
+[3;J[H[2J]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m you[K[K[Kscript –c sh hw1_you.txt[1Pou.txt[C[C[1P.txt[1P.txtd.txtr.txta.txtk.txte.txt
+Script started, file is –c
+[01;34m#=======================================================================#
+[1;36m                  Embry Riddle Aeronautical University         
+[01;34m#=======================================================================#
+[01;37m  HOSTNAME =[1;36m prclab1.erau.edu  
+[01;37m  LOCATION =[01;32m Prescott                      
+[01;37m  USER     =[01;35m tengj1                      
+[01;37m  UPTIME   =[01;33m 16 days, 23:31, 12 users, load average hours,  0.04, 0.08, 0.11 minutes  
+[01;37m  IP       = [2;36m172.19.241.11  
+[01;37m  OS       = [01;31mOracle Linux Server release 7.7  
+[01;37m  ARCH     = x86_64                     
+[01;37m  KERNEL   = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  UPTRACK  = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  Date     = Tue Jun 30 10:32:56 MST 2020                   
+[01;34m  CPUCORES = 6 [01;34m                                    CPU_AVG  = 0%
+[021;32m  MEMORY (total) = 7707 Mb     [01;32m                      MEM_AVG  = 22%
+[021;32m  SWAP (total)   = 4091 Mb [01;32m                     SWAP_AVG = 0%  
+[01;37m  LOAD AVERAGE  = [01;35m0.04, 0.08, 0.11                      
+[01;34m#=======================================================================#[0m
+
+             [01;31mUNAUTHORIZED ACCESS TO THIS SYSTEM IS PROHIBITED.
+[01;37mAccess to this system is restricted to authorized users only. Unauthorized
+[01;37maccess, use, or modification of this system, or any data stored therein is
+[01;37mstrictly prohibited by University policies and applicable law.
+
+ [01;31m** [01;33mIf you are not authorized to access this system, exit immediately! [01;31m**
+
+[01;37mUsers of this system expressly consent to activity monitoring. Unauthorized
+[01;37musers may be subject to administrative, criminal, or other legal action.
+
+]0;tengj1@prclab1:~[?1034h[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m cat -n hello.c
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!");
+     7	    printf("I did not eat my breakfast");
+     8	    printf("So I am really hungry now");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m gcc-ansi–Wall hw1.c
+bash: gcc-ansi–Wall: command not found
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m gcc-ansi–Wall hw1.c[1P[1@i[C[1P[1@ [1P[C[1@ [C[C[C[C[C[C[C[C[C[C^[[D[C[C[K[K[K[Kc
+bash: gcc-ansi: command not found
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m gcc-ansi Wall hw1.c[C[1@-[C[C[C[C[C[1@ [C[C[C
+gcc: error: hw1.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ls
+[0m[01;32ma.out[0m  –c  drakehw1.txt  hello.c  [01;34mSummer2020[0m  typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m cat -n hello.c
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!");
+     7	    printf("I did not eat my breakfast");
+     8	    printf("So I am really hungry now");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m typescript ccat -n hello.c[C[C[2Ptypescript c[C[C[C- c[C[C[1P c[1P c[C c- c[C[C[1P c- c[C[C[1Pc[C sh hw1.txt
+bash: typescrip: command not found
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m type[K[K[K[Ktypescrip -c sh hw1.txt[1@t
+bash: ./typescript: Permission denied
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m pwd
+/home/students/tengj1
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m typescript
+bash: ./typescript: Permission denied
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m rm [K[K[Kls -l
+total 24
+-rwxr-xr-x 1 tengj1 students 8408 Jun 30 10:05 [0m[01;32ma.out[0m
+-rw-r--r-- 1 tengj1 students    0 Jun 30 10:32 –c
+-rw-r--r-- 1 tengj1 students    0 Jun 30 10:11 drakehw1.txt
+-rw-r--r-- 1 tengj1 students  296 Jun 30 10:06 hello.c
+drwxr-xr-x 2 tengj1 students    6 Jun 30 08:47 [01;34mSummer2020[0m
+-rw-r--r-- 1 tengj1 students 8192 Jun 30 10:59 typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m more typescript 
+Script started on Tue 30 Jun 2020 10:07:37 AM MST
+[01;34m#=======================================================================#
+[1;36m                  Embry Riddle Aeronautical University         
+[01;34m#=======================================================================#
+[01;37m  HOSTNAME =[1;36m prclab1.erau.edu  
+[01;37m  LOCATION =[01;32m Prescott                      
+[01;37m  USER     =[01;35m tengj1                      
+[01;37m  UPTIME   =[01;33m 16 days, 23:06, 12 users, load average hours,  0.26, 0.34, 0.20 minutes  
+[01;37m  IP       = [2;36m172.19.241.11  
+[01;37m  OS       = [01;31mOracle Linux Server release 7.7  
+[01;37m  ARCH     = x86_64                     
+[01;37m  KERNEL   = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  UPTRACK  = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  Date     = Tue Jun 30 10:07:37 MST 2020                   
+[01;34m  CPUCORES = 6 [01;34m                                    CPU_AVG  = 1%
+[021;32m  MEMORY (total) = 7707 Mb     [01;32m                      MEM_AVG  = 22%
+[021;32m  SWAP (total)   = 4091 Mb [01;32m                     SWAP_AVG = 0%  
+[01;37m  LOAD AVERAGE  = [01;35m0.26, 0.34, 0.20                      
+[01;34m#=======================================================================#[0m
+
+             [01;31mUNAUTHORIZED ACCESS TO THIS SYSTEM IS PROHIBITED.
+[01;37mAccess to this system is restricted to authorized users only. Unauthorized
+[01;37maccess, use, or modification of this system, or any data stored therein is
+[01;37mstrictly prohibited by University policies and applicable law.
+
+ [01;31m** [01;33mIf you are not authorized to access this system, exit immediately! [01;31m**
+
+[01;37mUsers of this system expressly consent to activity monitoring. Unauthorized
+[01;37musers may be subject to administrative, criminal, or other legal action.
+
+]0;tengj1@prclab1:~[?1034h[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m script -c sh drakehw1.txt
+Script started, file is drakehw1.txt
+[?1034hsh-4.2$ cat -n hello.c
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!");
+     7	    printf("I did not eat my breakfast");
+     8	    printf("So I am really hungry now");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gcc-ansi -wall hello.c[Ksh-4.2$ gcc-ansi -wall hello.c
+[7m--More--(31%)[27m[K]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m exit
+exit
+Script done, file is –c
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ls
+[0m[01;32ma.out[0m  –c  drakehw1.txt  hello.c  [01;34mSummer2020[0m  typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m rm typescript 
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m rm typescript ls[Kscript –c sh hw1_drake.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[K
+[3;J[H[2J]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m script
+Script started, file is typescript
+[01;34m#=======================================================================#
+[1;36m                  Embry Riddle Aeronautical University         
+[01;34m#=======================================================================#
+[01;37m  HOSTNAME =[1;36m prclab1.erau.edu  
+[01;37m  LOCATION =[01;32m Prescott                      
+[01;37m  USER     =[01;35m tengj1                      
+[01;37m  UPTIME   =[01;33m 17 days, 4 min, 7 users  
+[01;37m  IP       = [2;36m172.19.241.11  
+[01;37m  OS       = [01;31mOracle Linux Server release 7.7  
+[01;37m  ARCH     = x86_64                     
+[01;37m  KERNEL   = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  UPTRACK  = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  Date     = Tue Jun 30 11:06:08 MST 2020                   
+[01;34m  CPUCORES = 6 [01;34m                                    CPU_AVG  = 0%
+[021;32m  MEMORY (total) = 7707 Mb     [01;32m                      MEM_AVG  = 21%
+[021;32m  SWAP (total)   = 4091 Mb [01;32m                     SWAP_AVG = 0%  
+[01;37m  LOAD AVERAGE  = [01;35m0.00, 0.01, 0.05                      
+[01;34m#=======================================================================#[0m
+
+             [01;31mUNAUTHORIZED ACCESS TO THIS SYSTEM IS PROHIBITED.
+[01;37mAccess to this system is restricted to authorized users only. Unauthorized
+[01;37maccess, use, or modification of this system, or any data stored therein is
+[01;37mstrictly prohibited by University policies and applicable law.
+
+ [01;31m** [01;33mIf you are not authorized to access this system, exit immediately! [01;31m**
+
+[01;37mUsers of this system expressly consent to activity monitoring. Unauthorized
+[01;37musers may be subject to administrative, criminal, or other legal action.
+
+]0;tengj1@prclab1:~[?1034h[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m exit
+exit
+Script done, file is typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ty[K[Kls
+[0m[01;32ma.out[0m  –c  drakehw1.txt  hello.c  [01;34mSummer2020[0m  typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m rm typescript 
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m typescro[Kipt
+bash: typescript: command not found
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m typescrpt[K[K[K[K[K[K[K[K[Kclear
+[3;J[H[2J]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m script -c sh hwa[K1[K[K[K[K[K[K[K[K[K[K
+Script started, file is typescript
+[01;34m#=======================================================================#
+[1;36m                  Embry Riddle Aeronautical University         
+[01;34m#=======================================================================#
+[01;37m  HOSTNAME =[1;36m prclab1.erau.edu  
+[01;37m  LOCATION =[01;32m Prescott                      
+[01;37m  USER     =[01;35m tengj1                      
+[01;37m  UPTIME   =[01;33m 17 days, 7 min, 7 users  
+[01;37m  IP       = [2;36m172.19.241.11  
+[01;37m  OS       = [01;31mOracle Linux Server release 7.7  
+[01;37m  ARCH     = x86_64                     
+[01;37m  KERNEL   = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  UPTRACK  = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  Date     = Tue Jun 30 11:08:35 MST 2020                   
+[01;34m  CPUCORES = 6 [01;34m                                    CPU_AVG  = 0%
+[021;32m  MEMORY (total) = 7707 Mb     [01;32m                      MEM_AVG  = 21%
+[021;32m  SWAP (total)   = 4091 Mb [01;32m                     SWAP_AVG = 0%  
+[01;37m  LOAD AVERAGE  = [01;35m0.00, 0.01, 0.05                      
+[01;34m#=======================================================================#[0m
+
+             [01;31mUNAUTHORIZED ACCESS TO THIS SYSTEM IS PROHIBITED.
+[01;37mAccess to this system is restricted to authorized users only. Unauthorized
+[01;37maccess, use, or modification of this system, or any data stored therein is
+[01;37mstrictly prohibited by University policies and applicable law.
+
+ [01;31m** [01;33mIf you are not authorized to access this system, exit immediately! [01;31m**
+
+[01;37mUsers of this system expressly consent to activity monitoring. Unauthorized
+[01;37musers may be subject to administrative, criminal, or other legal action.
+
+]0;tengj1@prclab1:~[?1034h[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m rm script
+rm: cannot remove ‘script’: No such file or directory
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ls
+[0m[01;32ma.out[0m  –c  drakehw1.txt  hello.c  [01;34mSummer2020[0m  typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m script -c sh hw1.txt
+Script started, file is hw1.txt
+[?1034hsh-4.2$ cat-[K[Kt -n hello.c
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!");
+     7	    printf("I did not eat my breakfast");
+     8	    printf("So I am really hungry now");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gccg[K -ansi -Wall hello.c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+sh-4.2$ a.out
+Greetings Earthlings!I come from PhoneixI have learned Matlab from EGR115and it is pretty fun!I did not eat my breakfastSo I am really hungry nowsh-4.2$ 
+sh-4.2$ exit
+exit
+Script done, file is hw1.txt
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m nano hello.c
+[?1049h[1;47r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                           File: hello.c                                                                                             [3;1H(B[m#include <stdio.h>[5dint main() {[6;5Hprintf("Greetings Earthlings!");[7;5Hprintf("I come from Phoneix");[8;5Hprintf("I have learned Matlab from EGR115and it is pretty fun!");[9;5Hprintf("I did not eat my breakfast");[10;5Hprintf("So I am really hungry now");[11d/* C style comment*/[12;5Hreturn 0;[13d}[45;75H(B[0;7m[ Read 12 lines ][46d^G(B[m Get Help[46;28H(B[0;7m^O(B[m WriteOut[46;55H(B[0;7m^R(B[m Read File[46;82H(B[0;7m^Y(B[m Prev Page[46;109H(B[0;7m^K(B[m Cut Text[46;136H(B[0;7m^C(B[m Cur Pos[47d(B[0;7m^X(B[m Exit[47;28H(B[0;7m^J(B[m Justify[47;55H(B[0;7m^W(B[m Where Is[47;82H(B[0;7m^V(B[m Next Page[47;109H(B[0;7m^U(B[m UnCut Text[47;136H(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d    pri	tf("I h	ve [45d[K[8;21Hear	ed Matl	b from 	GR115an	 it is 	retty f	n![1;156H(B[0;7mModified[8;67H(B[m\");n");[9;42H[Zt\");[Zn");[Z[10dw\");[39Gn");[Zww \n");[39G[1Pw \n");[38G \n");[K[38G[At\	[10d[11;21H[10;40H	)[Z,w\n");[38G[1Pw.\n");[39G[A[10d[45d(B[0;7mFile Name to Write: hello.c                                                                                                                                          [46;28H(B[m[14X[46;42H(B[0;7mM-D(B[m DOS Format           [46;82H (B[0;7mM-A(B[m Append [46;109H[15X[46;124H(B[0;7mM-B(B[m Backup File[K[47;2H(B[0;7mC(B[m Cancel[47;28H[14X[47;42H(B[0;7mM-M(B[m Mac Format          [47;82H (B[0;7mM-P(B[m Prepend[K[45;28H[1;156H[39;49m(B[0;7m        [45;73H(B[m[1K (B[0;7m[ Wrote 12 lines ](B[m[K[46;28H(B[0;7m^O(B[m WriteOut[16X[46;55H(B[0;7m^R(B[m Read File[46;82H(B[0;7m^Y(B[m Prev Page[46;109H(B[0;7m^K(B[m Cut Text[16X[46;136H(B[0;7m^C(B[m Cur Pos[47;2H(B[0;7mX(B[m Exit  [47;28H(B[0;7m^J(B[m Justify[17X[47;55H(B[0;7m^W(B[m Where Is[47;82H(B[0;7m^V(B[m Next Page[47;109H(B[0;7m^U(B[m UnCut Text[47;136H(B[0;7m^T(B[m To Spell[10;38H[45d(B[0;7mFile Name to Write: hello.c                                                                                                                                          [46;28H(B[m[14X[46;42H(B[0;7mM-D(B[m DOS Format           [46;82H (B[0;7mM-A(B[m Append [46;109H[15X[46;124H(B[0;7mM-B(B[m Backup File[K[47;2H(B[0;7mC(B[m Cancel[47;28H[14X[47;42H(B[0;7mM-M(B[m Mac Format          [47;82H (B[0;7mM-P(B[m Prepend[K[45;28H[45;73H[39;49m(B[m[1K (B[0;7m[ Wrote 12 lines ](B[m[K[46;28H(B[0;7m^O(B[m WriteOut[16X[46;55H(B[0;7m^R(B[m Read File[46;82H(B[0;7m^Y(B[m Prev Page[46;109H(B[0;7m^K(B[m Cut Text[16X[46;136H(B[0;7m^C(B[m Cur Pos[47;2H(B[0;7mX(B[m Exit  [47;28H(B[0;7m^J(B[m Justify[17X[47;55H(B[0;7m^W(B[m Where Is[47;82H(B[0;7m^V(B[m Next Page[47;109H(B[0;7m^U(B[m UnCut Text[47;136H(B[0;7m^T(B[m To Spell[10;38H[46d[J[47;165H[47;1H[?1049l[?1l>]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m nano hello.cscript -c sh hw1.txt
+Script started, file is hw1.txt
+[?1034hsh-4.2$ exita.outgcc -ansi -Wall hello.c[C[C[C[C[C[C[C[C[9Pcat -n[C[C[C[C[C[C[C[C
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!\n");
+     7	    printf("I did not eat my breakfast\n");
+     8	    printf("So I am really hungry now.\n");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ exit
+exit
+Script done, file is hw1.txt
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m script
+Script started, file is typescript
+[01;34m#=======================================================================#
+[1;36m                  Embry Riddle Aeronautical University         
+[01;34m#=======================================================================#
+[01;37m  HOSTNAME =[1;36m prclab1.erau.edu  
+[01;37m  LOCATION =[01;32m Prescott                      
+[01;37m  USER     =[01;35m tengj1                      
+[01;37m  UPTIME   =[01;33m 17 days, 17 min, 8 users  
+[01;37m  IP       = [2;36m172.19.241.11  
+[01;37m  OS       = [01;31mOracle Linux Server release 7.7  
+[01;37m  ARCH     = x86_64                     
+[01;37m  KERNEL   = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  UPTRACK  = 4.1.12-124.39.2.el7uek.x86_64                   
+[01;37m  Date     = Tue Jun 30 11:18:59 MST 2020                   
+[01;34m  CPUCORES = 6 [01;34m                                    CPU_AVG  = 1%
+[021;32m  MEMORY (total) = 7707 Mb     [01;32m                      MEM_AVG  = 21%
+[021;32m  SWAP (total)   = 4091 Mb [01;32m                     SWAP_AVG = 0%  
+[01;37m  LOAD AVERAGE  = [01;35m0.07, 0.04, 0.05                      
+[01;34m#=======================================================================#[0m
+
+             [01;31mUNAUTHORIZED ACCESS TO THIS SYSTEM IS PROHIBITED.
+[01;37mAccess to this system is restricted to authorized users only. Unauthorized
+[01;37maccess, use, or modification of this system, or any data stored therein is
+[01;37mstrictly prohibited by University policies and applicable law.
+
+ [01;31m** [01;33mIf you are not authorized to access this system, exit immediately! [01;31m**
+
+[01;37mUsers of this system expressly consent to activity monitoring. Unauthorized
+[01;37musers may be subject to administrative, criminal, or other legal action.
+
+]0;tengj1@prclab1:~[?1034h[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ex[Kxit
+exit
+Script done, file is typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m script -c sh hw1.txt
+Script started, file is hw1.txt
+[?1034hsh-4.2$ cat-1 hello.c[1P[C[1P hello.cn hello.c[1@-[1@ [1P[C[1@ [C[C[C[C[C[C[C[C[C[C
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is pretty fun!\n");
+     7	    printf("I did not eat my breakfast\n");
+     8	    printf("So I am really hungry now.\n");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gcc -ansi -Wall hello.c
+sh-4.2$ a.out
+Greetings Earthlings!I come from PhoneixI have learned Matlab from EGR115and it is pretty fun!
+I did not eat my breakfast
+So I am really hungry now.
+sh-4.2$ exit
+exit
+Script done, file is hw1.txt
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m [K[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ls
+[0m[01;32ma.out[0m  drakehw1.txt  hw1.txt     typescript
+–c     hello.c       [01;34mSummer2020[0m
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m ls -l
+total 68
+-rwxr-xr-x 1 tengj1 students  8456 Jun 30 11:20 [0m[01;32ma.out[0m
+-rw-r--r-- 1 tengj1 students 16384 Jun 30 11:12 –c
+-rw-r--r-- 1 tengj1 students 24576 Jun 30 11:20 drakehw1.txt
+-rw-r--r-- 1 tengj1 students   303 Jun 30 11:17 hello.c
+-rw-r--r-- 1 tengj1 students   859 Jun 30 11:20 hw1.txt
+drwxr-xr-x 2 tengj1 students     6 Jun 30 08:47 [01;34mSummer2020[0m
+-rw-r--r-- 1 tengj1 students  8192 Jun 30 11:19 typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m exit
+exit
+Script done, file is typescript
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m exit[K[K[K[Kmore hw1.txt
+Script started on Tue 30 Jun 2020 11:19:27 AM MST
+[?1034hsh-4.2$ cat-1 hello.c[1P[C[1P hello.cn hello.c[1@-[1@ [1P[C[1@ [C[C[C[C[C[C[C[C[C[C
+     1	#include <stdio.h>
+     2	
+     3	int main() {
+     4	    printf("Greetings Earthlings!");
+     5	    printf("I come from Phoneix");
+     6	    printf("I have learned Matlab from EGR115and it is p
+retty fun!\n");
+     7	    printf("I did not eat my breakfast\n");
+     8	    printf("So I am really hungry now.\n");
+     9	/* C style comment*/
+    10	    return 0;
+    11	}
+    12	
+sh-4.2$ gcc -ansi -Wall hello.c
+sh-4.2$ a.out
+Greetings Earthlings!I come from PhoneixI have learned Matlab fr
+[7m--More--(81%)[27mom EGR115and it is pretty fun!
+I did not eat my breakfast
+So I am really hungry now.
+sh-4.2$ exit
+exit
+
+Script done on Tue 30 Jun 2020 11:20:44 AM MST
+]0;tengj1@prclab1:~[[01;35mtengj1[m[01;33m@[m[01;36mprclab1[m:[01;33m~[m][31m$[m exit
+exit
+Script done, file is –c
+sh-4.2$ exit
+exit
+
+Script done on Tue 30 Jun 2020 11:27:26 AM MST

@@ -1,0 +1,6 @@
+DELIMITER //
+CREATE PROCEDURE all_teams()
+BEGIN
+SELECT team FROM Teams;
+END //
+DELIMITER ;
